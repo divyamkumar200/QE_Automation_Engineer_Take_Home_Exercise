@@ -1,0 +1,101 @@
+[
+  {
+    "id": "save10-standard",
+    "tags": ["smoke", "regression"],
+    "product": "Product A",
+    "quantity": 1,
+    "coupon": "SAVE10",
+    "expectedDiscountPercent": 10,
+    "customer": {
+      "firstName": "Divyam",
+      "lastName": "QA",
+      "email": "divyam.qa@example.com",
+      "address": "1 Test Street",
+      "city": "Lucknow",
+      "postalCode": "226001"
+    }
+  },
+  {
+    "id": "save20-threshold",
+    "tags": ["smoke", "regression"],
+    "product": "Product A",
+    "quantity": 2,
+    "coupon": "SAVE20",
+    "minimumSubtotal": 200,
+    "expectedDiscountPercent": 20,
+    "customer": {
+      "firstName": "Divyam",
+      "lastName": "QA",
+      "email": "divyam.qa2@example.com",
+      "address": "2 Test Street",
+      "city": "Noida",
+      "postalCode": "201301"
+    }
+  },
+  {
+    "id": "save20-below-threshold",
+    "tags": ["regression"],
+    "product": "Product A",
+    "quantity": 1,
+    "coupon": "SAVE20",
+    "minimumSubtotal": 200,
+    "expectedDiscountPercent": 0,
+    "expectedCouponError": "Minimum qualifying subtotal",
+    "customer": {
+      "firstName": "Divyam",
+      "lastName": "QA",
+      "email": "divyam.qa3@example.com",
+      "address": "3 Test Street",
+      "city": "Delhi",
+      "postalCode": "110001"
+    }
+  },
+  {
+    "id": "invalid-coupon",
+    "tags": ["smoke", "regression"],
+    "product": "Product A",
+    "quantity": 1,
+    "coupon": "INVALID10",
+    "expectedDiscountPercent": 0,
+    "expectedCouponError": "Invalid coupon",
+    "customer": {
+      "firstName": "Divyam",
+      "lastName": "QA",
+      "email": "divyam.qa4@example.com",
+      "address": "4 Test Street",
+      "city": "Lucknow",
+      "postalCode": "226001"
+    }
+  },
+  {
+    "id": "quantity-update",
+    "tags": ["regression"],
+    "product": "Product A",
+    "quantity": 1,
+    "updatedQuantity": 3,
+    "customer": {
+      "firstName": "Divyam",
+      "lastName": "QA",
+      "email": "divyam.qa5@example.com",
+      "address": "5 Test Street",
+      "city": "Lucknow",
+      "postalCode": "226001"
+    }
+  },
+  {
+    "id": "checkout-order-confirmation",
+    "tags": ["smoke", "regression"],
+    "product": "Product A",
+    "quantity": 1,
+    "coupon": null,
+    "expectedDiscountPercent": 0,
+    "customer": {
+      "firstName": "Divyam",
+      "lastName": "QA",
+      "email": "divyam.qa6@example.com",
+      "address": "6 Test Street",
+      "city": "Lucknow",
+      "postalCode": "226001"
+    }
+  }
+]
